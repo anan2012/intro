@@ -13,9 +13,16 @@ $$其中，$\Theta$ 为分发对象，P为分发策略。$\Pi$ 为使用P为$\Th
 $$
 \Omega(\Upsilon,t)=\sqrt{\frac{1}{m}\sum_{i=1}^{m-1}(\Xi_{i}(\Upsilon,t)-\frac{N(\Upsilon,t)}{\Xi_{i}(\Upsilon,t)})^2}
 $$
-越小，表示  越分散，说明  在所有的持有地址中分布的越均匀。而该数值越大，则  越集中到少量地址中。
-
-其中，t时刻链上  的持币情况为从账户  中选择  的元素。  为持币账户矩阵。
+$\Omega(\Upsilon,t)$越小，表示 $\Upsilon$越分散，说明 $\Upsilon$在所有的持有地址中分布的越均匀。而该数值越大，则 $\Upsilon$越集中到少量地址中。
+其中，t时刻链上 $\Upsilon$的持币情况为从账户  $\Lambda(t)$中选择$\Upsilon$的元素。$\Xi(\Upsilon,t)$为持币账户矩阵。
+$$
+\Xi(\Upsilon,t)=\Lambda(t)\land\Upsilon$$并且，满足关系:$\Upsilon$的流通总量 $N^{'}(\Upsilon,t)=\sum\Xi(\Upsilon,t)$。
+在有限数量的币种之中进行决策分析。TOPSIS法能够灵活简单的对原始数据进行充分分析，得到能够精确反应各币种之间的综合差距，得出良好的可比性的评价排序。同时，由于不同属性之间的差异性，对结果的影响力的不同，我们使用加权的TOPSIS法进行分析。
+将属性趋同化处理，分发对象$\Theta$的$A_0$ ，$A_1$属于高优属性。持币地址数量越多，流通率越高，则该币种的状态越优。$A_2$属于中性属性，$A_2$不能明确导向币种的优劣.$A_3$，$A_4$属于低优属性。流通市值排名越小，币的分散度越小，则该币种的状态越差。
+对于N个评价对象的M个属性，构成的原始数据：
+$$ 
+ \widetilde\Upsilon=\begin{bmatrix} \widetilde\Upsilon_0^0 & ...&\widetilde\Upsilon_0^{M-1}\\ ...& ...&...\\\widetilde\Upsilon_{N-1}^0 & ...&\widetilde\Upsilon_0^{M-1}\end{bmatrix}
+$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4OTE4MzkxMiw5NzY4MDU3NDFdfQ==
+eyJoaXN0b3J5IjpbLTEyMzMzNDY0MzBdfQ==
 -->
