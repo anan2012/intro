@@ -13,6 +13,9 @@ $$其中，$\Theta$ 为分发对象，P为分发策略。$\Pi$ 为使用P为$\Th
 $$
 \Omega(\Upsilon,t)=\sqrt{\frac{1}{m}\sum_{i=1}^{m-1}(\Xi_{i}(\Upsilon,t)-\frac{N(\Upsilon,t)}{\Xi_{i}(\Upsilon,t)})^2}
 $$
+越小，表示  越分散，说明  在所有的持有地址中分布的越均匀。而该数值越大，则  越集中到少量地址中。
+
+其中，t时刻链上  的持币情况为从账户  中选择  的元素。  为持币账户矩阵。
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc2ODA1NzQxXX0=
+eyJoaXN0b3J5IjpbLTE4OTE4MzkxMiw5NzY4MDU3NDFdfQ==
 -->
