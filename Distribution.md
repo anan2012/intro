@@ -9,7 +9,10 @@ $$其中，$\Theta$ 为分发对象，P为分发策略。$\Pi$ 为使用P为$\Th
 该模型包括两个阶段：（1）分析币种的基本情况，为Lumens的分发选择分发对象。（2）提出多个分发策略，比较各策略的优劣，推导出近似最优的分发策略。
 ## 2 选择分发对象
 将 t时刻币种$\Upsilon$的基本属性：持币地址数量，流通率，换手率，流通市值排名，以及推导属性：分散度，作为属性集A，A=（$\Psi(\Upsilon,t)$， $N(\Upsilon,t)$ ，$\Chi(\Upsilon,t)$ ， $\Phi(\Upsilon,t)$  ，   $\Omega(\Upsilon,t)$ ），对每个币种进行分析。
-定义1 分散度  在t时刻，表示  的分布情况的量化值。从宏观上反应了所有用户对  的持有情况。
+定义1 分散度  在t时刻，表示 $\Omega(\Upsilon,t)$  的分布情况的量化值。从宏观上反应了所有用户对$\Upsilon$ 的持有情况。
+$$
+\Omega(\Upsilon,t)=\sqrt{\frac{1}{m}\sum_{i=1}^{m-1}(\Xi_{i}(\Upsilon,t)-\frac{N(\Upsilon,t)}{\Xi_{i}(\Upsilon,t)})^2}
+$$
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2NzUzNjM3OV19
+eyJoaXN0b3J5IjpbOTc2ODA1NzQxXX0=
 -->
