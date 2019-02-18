@@ -1,27 +1,29 @@
 
 # Lumens Distribution Decision Making
-**摘要**：为了实现Lumens的有效分发，达到良好的分发效果，本文提出了一个随时间变化的两阶段Lumens分发模型。首先，选取分发对象。使用加权TOPSIS方法对流通币种进行分析、排序。选出适合的分发对象。下一步，从多角度提出了分发策略的组成要素，构成了$2^{6}$种分发策略。推导出理想的分发策略，将距离理想分发策略最近距离的策略作为最优的分发策略。从而，推导出一个优化的分发模型。我们将进一步在理论上对Stellar系统在分发前后进行稳定性分析，并使用该模型在不同场景下进行模拟分发实验。从而，在理论和实验方面验证本文所提模型的有效性和适应性。
+**摘要**：为了实现Lumens的有效分发，达到良好的分发效果，本文提出了一个随时间变化的两阶段Lumens分发模型。首先，选取分发对象。使用加权TOPSIS方法对流通币种进行分析、排序。选出适合的分发对象。下一步，从多角度提出了分发策略的组成要素，构成了$2^{6}$种分发策略。推导出理想的分发策略，将距离理想分发策略最近距离的策略作为最优的分发策略。从而，推导出一个优化的分发模型。我们将进一步在理论上对Stellar系统在分发前后进行稳定性分析。使用该模型在不同场景下进行模拟分发使用，并从经济学角度对结果进行分析。在理论和实验方面验证本文所提模型的有效性和适应性。从而，使用本模型为Lumens选择高效的分发策略。
 ## 1 分发模型
-理想的，Lumens如果能够分发到那些认可Lumens的用户。在分发后对能够增大Lumens的覆盖范围和使用范围，并对Lumens的流通产生积极的影响。固定的分发策略达到的效果会因不同市场行情而异。本文分析数字资产的基本情况，选择适合Lumens分发的币种。确定好Lumens分发对象后，提出使用多种分发策略为该对象分发Lumens，根据模拟的分发结果，得到一个最接近理想策略的分发策略。从而，在分发之后，能够使Lumens的分布情况、Lumens账户的活跃情况等具有明显的改善。本文提出一个随着时间而变化的Lumens分发模型，
+理想情况下，我们希望Lumens能够分发到那些认可Lumens的用户。在分发后对能够增大Lumens的覆盖范围和使用范围，并对Lumens的流通产生积极的影响。固定的分发策略无法适应不同的市场行情。
+
+本文分析全网数字资产的基本情况，选择适合Lumens分发的币种。确定Lumens分发对象后，提出使用多种分发策略为该对象分发Lumens，根据模拟的分发结果，得到最接近理想策略的分发策略。从而，在分发之后，能够使Lumens的分布情况、Lumens账户的活跃情况等方面具有明显的改善。本文提出一个随着时间而变化的Lumens分发模型，
 $$
-\Pi(\Theta,P) .                                     
+\Pi(\Theta,P).                                     
 $$
-其中，$\Theta$ 为分发对象，P为分发策略。$\Pi$ 为使用P为$\Theta$进行Lumens的分发模型。
+其中，$\Theta$ 为分发对象，$P$为分发策略。$\Pi$ 为使用$P$为$\Theta$进行Lumens的分发模型。
 该模型包括两个阶段：（1）分析币种的基本情况，为Lumens的分发选择分发对象。（2）提出多个分发策略，比较各策略的优劣，推导出近似最优的分发策略。
 ## 2 选择分发对象
-将 t时刻币种$\Upsilon$的基本属性：持币地址数量，流通率，换手率，流通市值排名，以及推导属性：分散度，作为属性集A，A=（$\Psi(\Upsilon,t)$， $N(\Upsilon,t)$ ，$\Chi(\Upsilon,t)$ ， $\Phi(\Upsilon,t)$  ，   $\Omega(\Upsilon,t)$ ），对每个币种进行分析。
+将$t$时刻币种$\Upsilon$的基本属性：持币地址数量，流通率，换手率，流通市值排名，以及推导属性：分散度，作为属性集A，A=（$\Psi(\Upsilon,t)$， $N(\Upsilon,t)$ ，$\Chi(\Upsilon,t)$ ， $\Phi(\Upsilon,t)$  ，   $\Omega(\Upsilon,t)$ ），对每个币种进行分析。
 定义1 分散度  在t时刻，表示 $\Omega(\Upsilon,t)$  的分布情况的量化值。从宏观上反应了所有用户对$\Upsilon$ 的持有情况。
 $$
 \Omega(\Upsilon,t)=\sqrt{\frac{1}{m}\sum_{i=1}^{m-1}(\Xi_{i}(\Upsilon,t)-\frac{N(\Upsilon,t)}{\Xi_{i}(\Upsilon,t)})^2}
 $$
 $\Omega(\Upsilon,t)$越小，表示 $\Upsilon$越分散，说明 $\Upsilon$在所有的持有地址中分布的越均匀。而该数值越大，则 $\Upsilon$越集中到少量地址中。
-其中，t时刻链上 $\Upsilon$的持币情况为从账户  $\Lambda(t)$中选择$\Upsilon$的元素。$\Xi(\Upsilon,t)$为持币账户矩阵。
+其中，$t$时刻链上 $\Upsilon$的持币情况为从账户  $\Lambda(t)$中选择$\Upsilon$的元素。$\Xi(\Upsilon,t)$为持币账户矩阵。
 
 $$
 \Xi(\Upsilon,t)=\Lambda(t)\land\Upsilon$$
 并且，满足关系:$\Upsilon$的流通总量 $N^{'}(\Upsilon,t)=\sum\Xi(\Upsilon,t)$。
 在有限数量的币种之中进行决策分析。TOPSIS法能够灵活简单的对原始数据进行充分分析，得到能够精确反应各币种之间的综合差距，得出良好的可比性的评价排序。同时，由于不同属性之间的差异性，对结果的影响力的不同，我们使用加权的TOPSIS法进行分析。
-将属性趋同化处理，分发对象$\Theta$的$A_0$ ，$A_1$属于高优属性。持币地址数量越多，流通率越高，则该币种的状态越优。$A_2$属于中性属性，$A_2$不能明确导向币种的优劣.$A_3$，$A_4$属于低优属性。流通市值排名越小，币的分散度越小，则该币种的状态越差。
+将属性趋同化处理，分发对象$\Theta$的$A_0$ ，$A_1$属于高优属性。持币地址数量越多，流通率越高，则该币种的状态越优。$A_2$属于中性属性，$A_2$不能明确导向币种的优劣。$A_3$，$A_4$属于低优属性。流通市值排名越小，币的分散度越小，则该币种的状态越差。
 
 对于V个评价对象的M个属性，构成的原始数据：
 $$ 
@@ -29,11 +31,11 @@ $$
 $$
 
 显然，其中M=5。V为选取的币种数量。
-使用$(\widetilde\Upsilon_i^j)^{'}=\frac{m}{m+|\widetilde\Upsilon_i^j-m|}$将$\widetilde\Upsilon$的中性属性$A_2$转化为高优属性。使用$(\widetilde\Upsilon_i^j)^{'}=\frac{1}{\widetilde\Upsilon_i^j}$将$\widetilde\Upsilon$中的低优属性$A_3$，$A_4$转化为高优属性。从而得到属性趋同矩阵$\widetilde\Upsilon^{'}$  将公式（3）中性属性A2转化为高优属性。使用  将公式（3）中的低优属性A3，A4转化为高优属性。从而得到属性趋同矩阵  。
+使用$(\widetilde\Upsilon_i^j)^{'}=\frac{m}{m+|\widetilde\Upsilon_i^j-m|}$将$\widetilde\Upsilon$的中性属性$A_2$转化为高优属性。使用$(\widetilde\Upsilon_i^j)^{'}=\frac{1}{\widetilde\Upsilon_i^j}$将$\widetilde\Upsilon$中的低优属性$A_3$，$A_4$转化为高优属性。从而得到属性趋同矩阵$\widetilde\Upsilon^{'}$。  
 
 由于属性处于不同量纲的和数量级。为了消除属性能够在决策过程中的影响的差异化。对$\widetilde\Upsilon^{'}$进行归一化处理。
 
-对$A_0$ ，$A_1$，令$(\widetilde\Upsilon_i^j)^{"}=\frac{\widetilde\Upsilon_i^j}{\sqrt{\sum(\widetilde{\Upsilon}_i^j)^2}}$。对$A_2$ ，$A_3$，$A_4$令$(\widetilde\Upsilon_i^j)^{"}=\frac{(\widetilde\Upsilon_i^j)^{'}}{\sqrt{\sum((\widetilde\Upsilon_i^j)^{'})^2}}$。得到归一化处理后的指标矩阵$\widetilde\Upsilon^{"}$。
+对$A_0$ ，$A_1$，令 $(\widetilde\Upsilon_i^j)^{"}=\frac{\widetilde\Upsilon_i^j}{\sqrt{\sum(\widetilde{\Upsilon}_i^j)^2}}$。对$A_2$ ，$A_3$，$A_4$令$(\widetilde\Upsilon_i^j)^{"}=\frac{(\widetilde\Upsilon_i^j)^{'}}{\sqrt{\sum((\widetilde\Upsilon_i^j)^{'})^2}}$。得到归一化处理后的指标矩阵$\widetilde\Upsilon^{"}$。
 
 根据$\widetilde\Upsilon^{"}$得到有限方案的最优方案和最劣方案，即最优值向量和最劣值向量。
 
@@ -41,36 +43,19 @@ $$
 
 最劣方案:$\widetilde{\Upsilon}^-=(min(\widetilde\Upsilon_i^0)^",min(\widetilde\Upsilon_i^1)^",...,min(\widetilde\Upsilon_i^{M-1})^")$。
 
-使用公式  对  进行归一化处理。
-
-对A0和A1，令  。对A2，A3，A4，令  。得到归一化处理后的指标矩阵  。
-
-根据  得到有限方案的最优方案和最劣方案，即最优值向量和最劣值向量。
-
-最优方案：  。最劣方案：  。
-
-使用公式（4）和（5）计算VN个评价对象的属性值与最优方案距离和最劣方案的距离,$D_i^+$,$D_i^-$，  和  分别表示评价对象  与最优方案和最劣方案。由于在做方案选择时，不同的主体对属性的重要程度有不同的认识,令$\lambda_j$为指标j的权重系数。
-$\widetilde{\Upsilon}_i$
+计算$V$个评价对象的属性值与最优方案距离和最劣方案的距离,$D_i^+$和$D_i^-$分别表示评价对象与最优方案和最劣方案的距离。由于在做方案选择时，不同的主体对属性的重要程度有不同的认识,令$\lambda_j$为指标$j$的权重系数。
 $$
 D_i^+=\sqrt{\sum_{j=0}^{M-1}\lambda_j(\widetilde{\Upsilon}_i^+-\widetilde{\Upsilon}_i^j)^2}$$
 $$
 D_i^-=\sqrt{\sum_{j=0}^{M-1}\lambda_j(\widetilde{\Upsilon}_i^--\widetilde{\Upsilon}_i^j)^2}
 $$
-，  为指标j的权重系数。
 
-（34）
-
-（5）
-
-使用公式（6）计算VN个评价对象与$\widetilde{\Upsilon}^+$的接近程度$C_i$，$C_i\in[0,1)$。$C_i$越趋进1，评价对象$\widetilde{\Upsilon}_i$最优方案  的接近程度  。  ，  越趋进1，评价对象  越接近最优水平。$C_i$  越趋进0，评价对象  越接近最劣水平。 
+计算V个评价对象与$\widetilde{\Upsilon}^+$的接近程度$C_i$，$C_i\in[0,1)$。$C_i$越趋进1，评价对象$\widetilde{\Upsilon}_i$与最优方案的接近程度越大。评价对象越接近最优水平。$C_i$越趋进0，评价对象越接近最劣水平。 
 $$
 C_i=\frac{D_i^-}{D_i^++D_i^-}
 $$
 根据$C_i$对$\widetilde{\Upsilon}_i$进行总体排序。$C_i$越大，对象$\widetilde{\Upsilon}_i$越优。从而，近似最优解$\widetilde{\Upsilon}_i$
-
-（6）
-
-根据  对  进行总体排序。  越大，对象  越优。从而，近似最优解  被选出作为分发的基础币种。
+从而，近似最优解被选出作为分发的基础币种。
 
 ## **3 Multi- Objective Distribution Decision Making**
 
@@ -123,7 +108,7 @@ $$
 ## 4 下一步工作计划
 （1）分析分发方案的结果
 
-    使用模型$\Pi$对Lumens 进行模拟分发，得出分发后的市场动向和账户动向等结果，将使用该模型分发与2016年10月和2017年8月已经进行的2轮免费分发结果进行对比。
+使用模型$\Pi$ 对Lumens 进行模拟分发，得出分发后的市场动向和账户动向等结果，将使用该模型分发与2016年10月和2017年8月已经进行的2轮免费分发结果进行对比。
 （2）增加账户识别依据
 
 将分发后Lumens的流向目的地识别，为分发策略的附加奖励中识别出滥用账户，有效账户，和优质账户提供依据。
@@ -137,6 +122,15 @@ $$
 
 根据恒星的持有账户的动态，对持有账户进行分析，来决策是否分发和分发时机。
 
+参考文献
+
+1 The Stellar Consensus Protocol: A Federated Model for Internet-level Consecus
+
+2 TOPSIS ANALYSIS METHOD
+
+3 Distributed System
+
+4 Load Balance in Distributed System
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTE5OTIzNjcyNDVdfQ==
