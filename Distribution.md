@@ -29,9 +29,9 @@ $$
 $$
 
 显然，其中M=5。V为选取的币种数量。
-使用$(\widetilde\Upsilon_i^j)^{'}=\frac{m}{m+|\widetilde\Upsilon_i^j-m|}$将$\widetilde\Upsilon$的中性属性$A_2$转化为高优属性。使用$(\widetilde\Upsilon_i^j)^{'}=\frac{1}{\widetilde\Upsilon_i^j}$将$\widetilde\Upsilon$中的低优属性$A_3$，$A_4$转化为高优属性。从而得到属性趋同矩阵$\widetilde\Upsilon^{'}$。
+使用$(\widetilde\Upsilon_i^j)^{'}=\frac{m}{m+|\widetilde\Upsilon_i^j-m|}$将$\widetilde\Upsilon$的中性属性$A_2$转化为高优属性。使用$(\widetilde\Upsilon_i^j)^{'}=\frac{1}{\widetilde\Upsilon_i^j}$将$\widetilde\Upsilon$中的低优属性$A_3$，$A_4$转化为高优属性。从而得到属性趋同矩阵$\widetilde\Upsilon^{'}$  将公式（3）中性属性A2转化为高优属性。使用  将公式（3）中的低优属性A3，A4转化为高优属性。从而得到属性趋同矩阵  。
 
-由于属性处于不同量纲的和数量级。为了消除属能够在决策过程中的影响的差异化。对$\widetilde\Upsilon^{'}$进行归一化处理。
+由于属性处于不同量纲的和数量级。为了消除属性能够在决策过程中的影响的差异化。对$\widetilde\Upsilon^{'}$进行归一化处理。
 
 对$A_0$ ，$A_1$，令$(\widetilde\Upsilon_i^j)^{"}=\frac{\widetilde\Upsilon_i^j}{\sqrt{\sum(\widetilde{\Upsilon}_i^j)^2}}$。对$A_2$ ，$A_3$，$A_4$令$(\widetilde\Upsilon_i^j)^{"}=\frac{(\widetilde\Upsilon_i^j)^{'}}{\sqrt{\sum((\widetilde\Upsilon_i^j)^{'})^2}}$。得到归一化处理后的指标矩阵$\widetilde\Upsilon^{"}$。
 
@@ -41,20 +41,38 @@ $$
 
 最劣方案:$\widetilde{\Upsilon}^-=(min(\widetilde\Upsilon_i^0)^",min(\widetilde\Upsilon_i^1)^",...,min(\widetilde\Upsilon_i^{M-1})^")$。
 
-计算V个评价对象的属性值与最优方案距离和最劣方案的距离,$D_i^+$,$D_i^-$。由于在做方案选择时，不同的主体对属性的重要程度有不同的认识,令$\lambda_j$为指标j的权重系数。
+使用公式  对  进行归一化处理。
+
+对A0和A1，令  。对A2，A3，A4，令  。得到归一化处理后的指标矩阵  。
+
+根据  得到有限方案的最优方案和最劣方案，即最优值向量和最劣值向量。
+
+最优方案：  。最劣方案：  。
+
+使用公式（4）和（5）计算VN个评价对象的属性值与最优方案距离和最劣方案的距离,$D_i^+$,$D_i^-$，  和  分别表示评价对象  与最优方案和最劣方案。由于在做方案选择时，不同的主体对属性的重要程度有不同的认识,令$\lambda_j$为指标j的权重系数。
 $\widetilde{\Upsilon}_i$
 $$
 D_i^+=\sqrt{\sum_{j=0}^{M-1}\lambda_j(\widetilde{\Upsilon}_i^+-\widetilde{\Upsilon}_i^j)^2}$$
 $$
 D_i^-=\sqrt{\sum_{j=0}^{M-1}\lambda_j(\widetilde{\Upsilon}_i^--\widetilde{\Upsilon}_i^j)^2}
 $$
-计算V个评价对象与$\widetilde{\Upsilon}^+$的接近程度$C_i$，$C_i\in[0,1)$。$C_i$越趋进1，评价对象$\widetilde{\Upsilon}_i$越接近最优水平。$C_i$越趋进0，评价对象越接近最劣水平。 
+，  为指标j的权重系数。
+
+（34）
+
+（5）
+
+使用公式（6）计算VN个评价对象与$\widetilde{\Upsilon}^+$的接近程度$C_i$，$C_i\in[0,1)$。$C_i$越趋进1，评价对象$\widetilde{\Upsilon}_i$最优方案  的接近程度  。  ，  越趋进1，评价对象  越接近最优水平。$C_i$  越趋进0，评价对象  越接近最劣水平。 
 $$
 C_i=\frac{D_i^-}{D_i^++D_i^-}
 $$
-根据$C_i$对$\widetilde{\Upsilon}_i$进行总体排序。$C_i$越大，对象$\widetilde{\Upsilon}_i$越优。从而，近似最优解$\widetilde{\Upsilon}_i$被选出作为分发的基础币种。
+根据$C_i$对$\widetilde{\Upsilon}_i$进行总体排序。$C_i$越大，对象$\widetilde{\Upsilon}_i$越优。从而，近似最优解$\widetilde{\Upsilon}_i$
 
-## 3 Multi- Objective Distribution Decision Making
+（6）
+
+根据  对  进行总体排序。  越大，对象  越优。从而，近似最优解  被选出作为分发的基础币种。
+
+## **3 Multi- Objective Distribution Decision Making**
 
 一个基本的分发策略必须对分发数量，分发规则，快照时间，截止时间，领取方式进行准确的描述。此外，可以对分发做附加条件和附加的奖励。本文结合基本的分发策略以及附加的条款，对每个条目给出了两种方式，表1所示。
 |           选项    |0                          |1                        |
@@ -120,3 +138,6 @@ $$
 根据恒星的持有账户的动态，对持有账户进行分析，来决策是否分发和分发时机。
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTE5OTIzNjcyNDVdfQ==
+-->
