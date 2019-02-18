@@ -31,8 +31,10 @@ $$
 Ledger_i|S_t\stackrel{Transaction}\Longrightarrow...\stackrel{Transaction}\Longrightarrow Ledgre_{i+k}|S_{t+k}     （5）
 $$
 Ledger的变化过程直接体现在区块链上。
-
-
 ## Power of Distribution(PoD)
-系统激励节点分发挖矿，挖矿得到激励后，触发状态迁移。
+基于分发的共识协议，系统激励节点分发挖矿，挖矿得到激励后，触发状态迁移。
 
+
+安全性
+
+可用性
