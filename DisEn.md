@@ -119,8 +119,13 @@ Calculate the average age of a currency, $\dot{R}(\Upsilon,\Lambda)=\frac{\sum_{
 
 For any scheme $S_i$ of the $P$ schemes ($P=2^6$), the predicted values of $Q$ objectives $(Q=5)$ are derived. And the target value matrix $O(t)$ is obtained.
 $$
-O(t)=\begin{bmatrix}\Omega(\Upsilon,t)_0&\dot{\Psi}(\Upsilon,t)_0&\Zeta(\Upsilon,\Lambda)_0&Beta(\Lambda)_0&\dot{M}(\Upsilon,\Lambda)_0\\\ ...&...&...&...&...\\\Omega(\Upsilon,t)_{P-1}&\dot{\Psi}(\Upsilon,t)_{P-1}&\Zeta(\Upsilon,\Lambda)_{P-1}&Beta(\Lambda)_{P-1}&\dot{M}(\Upsilon,\Lambda)_{P-1}\end{bmatrix}
+O(t)=\begin{bmatrix}\Omega(\Upsilon,t)_0&\dot{\Psi}(\Upsilon,t)_0&\Zeta(\Upsilon,\Lambda)_0&\Beta(\Lambda)_0&\dot{M}(\Upsilon,\Lambda)_0\\\ ...&...&...&...&...\\\Omega(\Upsilon,t)_{P-1}&\dot{\Psi}(\Upsilon,t)_{P-1}&\Zeta(\Upsilon,\Lambda)_{P-1}\Beta(\Lambda)_{P-1}&\dot{M}(\Upsilon,\Lambda)_{P-1}\end{bmatrix}
 $$
+
+$$
+O(t)_i=(\Omega(\Upsilon,t)_i,\dot{\Psi}(\Upsilon,t)_i,\Zeta(\Upsilon,\Lambda)_i,\Beta(\Lambda)_i,\dot{M}(\Upsilon,\Lambda)_i),i\in[0,P).
+$$
+
 
 Calculate the change rate of target's predicted value on $t$ compared with $t_0$, $\Delta O(t)$. $\Delta O_i^j(t)=\frac{O_i^j(t)-O_i^j(t_0)}{O_i^j(t_0)}$. Therefore，we get the best strategy on each target, $S^+=(O_0^+,O_1^+,...,O_{M-1}^+)=(max(\Delta O_i^0),max(\Delta O_i^1),...max(\Delta O_i^{Q-1}))$.
 Calculate the distance between an arbitrary $S_i$ and the best strategy$S^+$, $\vec{S}=\sqrt{\sum_{j=0}^{M-1}\xi_j(O_i^+-O_i^j)^2}$. $\xi_j$ is the weight of target $j$.
